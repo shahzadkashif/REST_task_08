@@ -45,8 +45,8 @@ class BookingListTest(APITestCase):
 
 		Booking.objects.create(flight=flight1, date="2020-01-01", user=user1, passengers=2)
 		Booking.objects.create(flight=flight2, date="2019-01-01", user=user1, passengers=2)
-		Booking.objects.create(flight=flight1, date="2020-01-01", user=user2, passengers=2)
-		Booking.objects.create(flight=flight2, date="2021-01-01", user=user2, passengers=2)
+		Booking.objects.create(flight=flight1, date="2031-01-01", user=user2, passengers=2)
+		Booking.objects.create(flight=flight2, date="2031-01-01", user=user2, passengers=2)
 
 		response = self.client.post(reverse('login'), {"username" : "laila", "password": "1234567890-="})
 		self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + response.data['access'])
